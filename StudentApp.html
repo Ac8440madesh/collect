@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Student ID: YOUR_STUDENT_ID -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YOUR_STUDENT_ID</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 420px; margin: 30px auto; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input { width: 100%; padding: 6px; box-sizing: border-box; }
+    .error { color: red; font-size: 0.85rem; min-height: 1em; }
+    button { margin-top: 15px; padding: 8px 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: Application form -->
+  <div id="formPage">
+    <h2>Student ID Card Application</h2>
+    <form id="studentForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" onfocusout="validateName()">
+      <div class="error" id="nameError"></div>
+
+      <label for="dob">Date of Birth (dd/mm/yyyy)</label>
+      <input type="text" id="dob" placeholder="dd/mm/yyyy" onfocusout="validateDob()">
+      <div class="error" id="dobError"></div>
+
+      <label for="age">Age</label>
+      <input type="text" id="age" readonly>
+
+      <label for="mobile">Mobile Number</label>
+      <input type="text" id="mobile" onfocusout="validateMobile()">
+      <div class="error" id="mobileError"></div>
+
+      <label for="email">Email ID</label>
+      <input type="text" id="email" onfocusout="validateEmail()">
+      <div class="error" id="emailError"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- PAGE 2: Retrieve cookie (shown after successful submit) -->
+  <div id="retrievePage" style="display:none;">
+    <h2>Retrieve Details</h2>
+    <label for="retrieveMobile">Mobile number</label>
+    <input type="text" id="retrieveMobile">
+    <button type="button" id="retrieveBtn">Retrieve cookie</button>
+  </div>
+
+  <script src="StudentApp.js"></script>
+</body>
+</html>
